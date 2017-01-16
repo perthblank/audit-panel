@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#mockAPIResponse {
+    background-color: lightgrey;
+    margin: 0;
+    padding-right: 5px;
+}
+
+#mockAPIResponse li {
+    list-style-type: decimal;
+    padding: 5px 0;
+}
+
+#mockAPIResponse li + li {
+    border-top: 1px solid black; 
+}

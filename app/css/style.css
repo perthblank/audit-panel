@@ -1,0 +1,90 @@
+*{
+  font-family:Arial, Helvetica, sans-serif;
+}
+.line {
+  fill: none;
+  stroke-width: 3.5px;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis--x path {
+  display: none;
+}
+
+#barContainer, #lineContainer{
+  width:700px;
+  float:left;
+  margin-right:30px;
+}
+
+.panelContainer
+{
+  margin-bottom:30px;
+  border:0px solid black;
+  padding-top:10px;
+  background:#dfdfdf;
+  border-radius:10px;
+}
+
+.svg{
+  float:left;
+  margin-bottom:10px;
+  border:0px solid black;
+}
+
+.colorPie
+{
+  width:20px;
+  height:20px;
+  margin-right:5px;
+  border-radius:50%;
+  border:0px;
+  margin-top:10px;
+  
+}
+
+.colorPie:hover
+{
+  cursor:pointer;
+}
+
+.criterionLabel
+{
+  height:40px;
+  width:180px;
+  margin-top:-24px;
+  margin-left:25px;
+  border:0px solid black;
+
+}
+
+.blockHeader
+{
+  margin-left:15px;
+}
+
+.axisLabel
+{
+  color:white;
+}
+
+.mainContainer
+{
+  padding-left:50px;
+  padding-top:20px;
+  width:100%;
+  margin-top:30px;
+}
+
+#errorLight
+{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:0px solid black;
+  margin-top:5px;
+  background-color:#4a0000;
+}
