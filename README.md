@@ -6,6 +6,10 @@ This project gives solution to the code challenge from **Juniper Networks**.
 Toolset include: Javascript, CSS, HTML, jQuery, Bootstrap and D3.js.
 Developed and tested on **Chrome**.
 
+> **Note:**
+
+> - Some code found in app/js/demo/demo_driver.js is helpful and thus is retained.
+
 ----------
 Features
 -------------
