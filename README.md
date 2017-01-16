@@ -10,7 +10,6 @@ Developed and tested on **Chrome**.
 
 > - Some code found in app/js/demo/demo_driver.js is helpful and thus is retained.
 
-----------
 Features
 -------------
 ###Charts
