@@ -59,11 +59,14 @@ class dynamicForm
             .attr("class","btn btn-default")
             .attr("id",btnGenerateID)
             .attr("role","button")
+            .attr("type","button")
             .html("Generate Form")
-            .on("click",function(){
+            .on("click",function(e){
                 
                 d3.select("#"+mainFormID).html("");
                 $(".alert").hide();
+                d3.select("#"+mainFormID)
+                    .append("h2").attr("class","formHeader").html('Dynamic Form');
                 var table = d3.select("#"+mainFormID).append("table");
                 d3.selectAll(".criteriaCheckbox").each(function(){
                     if(d3.select(this).node().checked)
@@ -102,6 +105,7 @@ class dynamicForm
                 d3.select("#"+mainFormID).append("button")
                     .attr("class","btn btn-default")
                     .attr("id",btnSubmitID)
+                    .attr("type","button")
                     .attr("role","button")
                     .html("Submit")
                     .on("click",function(){

@@ -31,7 +31,8 @@ function createColorButton(parentNode, criterionName, bindID, colorIndex, styleN
     node.append("div")
         .attr("class","criterionLabel")
         .attr("targ",criterionName)
-        .html(criterionName);
+        .html(criterionName+" ")
+
 
     return defaultColors[colorIndex];
 
@@ -64,7 +65,7 @@ class KeyNameMap
 
 var keyNameMap = new KeyNameMap();
 
-class CriteriaLine{
+class LineChart{
 
     constructor(parentContainerID, name, criteria, upperBound)
     {
@@ -206,7 +207,7 @@ class CriteriaLine{
 
 }
 
-class CriteriaBar{
+class BarChart{
 
     constructor(parentContainerID, name, criteria, upperBound)
     {
@@ -396,8 +397,8 @@ function initCharts()
         var clist = criteria[key]["properties"]?Object.keys(criteria[key]["properties"]).map(function(c){
             return key+","+c; 
         }):[key];
-        controler.add(new CriteriaBar("barContainer", key,clist,criteria[key]["default_upperbound"]));
-        controler.add(new CriteriaLine("lineContainer", key,clist,criteria[key]["default_upperbound"]));
+        controler.add(new BarChart("barContainer", key,clist,criteria[key]["default_upperbound"]));
+        controler.add(new LineChart("lineContainer", key,clist,criteria[key]["default_upperbound"]));
     });
 
     d3.selectAll("span")

@@ -43,7 +43,7 @@ h2
   margin-bottom:30px;
   border:0px solid black;
   padding-top:10px;
-  background:#dfdfdf;
+  background:#eee;
   border-radius:10px;
 }
 
@@ -90,6 +90,13 @@ h2
   color:white;
 }
 
+#errContainer
+{
+  border-radius:5px;
+  border:2px solid #dfdfdf;
+  width:40%;
+  padding:15px;
+}
 
 #errorLight
 {
@@ -104,7 +111,10 @@ h2
 #mainForm
 {
   margin-top:30px;
-  width:300px;
+  width:50%;
+  padding:20px;
+  padding-top:10px;
+  border:1px solid #eee;
 }
 
 .form-control:focus {
@@ -123,10 +133,15 @@ h2
 {
   float:left;
   font-size:20px;
+  font-weight: 300;
 }
 
 #selectionForm
 {
+  background-color:#eee;
+  padding:20px;
+  width:50%;
+  border-radius:5px;
 }
 
 .cform
@@ -135,6 +150,13 @@ h2
   padding-left:10px;
   width:300px;
   margin-top:10px;
+}
+
+.formHeader
+{
+  color:#004884;
+  border-bottom:1px solid #eee;
+  padding-bottom: 10px;
 }
 
 table

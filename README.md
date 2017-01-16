@@ -3,6 +3,7 @@ AuditPanel: Juniper Networks Code Challenge
 
 
 This project gives solution to the code challenge from **Juniper Networks**. 
+Developed and tested on **Chrome**
 
 ----------
 Features
@@ -22,7 +23,7 @@ Usage
 This project adopts the node server from the source, thus the usage is the same as original.
 
 * Make sure you have NodeJS (v4.x.x and above) installed globally on your machine. Find the detailed installation instruction from https://nodejs.org/en/ 
-* Open any command-line prompt you know on your machine, set the current directory to the app/ folder.
+* Open any command-line prompt, set the current directory to the `app/` folder.
 * Run `npm install`
 * When the installation is finished, run `npm run start` and open `localhost:8000` in your browser
 
@@ -31,13 +32,13 @@ API
 -------------
 APIs are designed for potential future usage
 ###Chart
-####Bar chart
+####Bar chart (mychart.js)
 ```javascript
-var myChart = (parentContainerID, chartName, criteria, upperBound);
+var myChart = new BarChart(parentContainerID, chartName, criteria, upperBound);
 ```
 ####Line chart
 ```javascript
-var myChart = (parentContainerID, chartName, criteria, upperBound);
+var myChart = new LineChart(parentContainerID, chartName, criteria, upperBound);
 ```
 where `criteria` is an `Array` which represented the keys of criteria from `data`, and using `,` to concatenate hierarchy structure. For example:
 ```javascript
@@ -56,7 +57,7 @@ to update chart, simply use
 myChart.update(data);
 ```
 
-###Form
+###Form (myform.js)
 To generate a form whose input boxes can be customized.
 ```javascript
 var form = new dynamicForm(
