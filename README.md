@@ -3,7 +3,7 @@ AuditPanel: Juniper Networks Code Challenge
 
 
 This project gives solution to the code challenge from **Juniper Networks**. 
-Toolset include: Javascript, CSS, HTML, jQuery, jQuery-mockjax, Bootstrap and D3.js.
+Toolset include: Javascript, CSS, HTML, jQuery, Bootstrap and D3.js.
 Developed and tested on **Chrome**.
 
 ----------
@@ -11,8 +11,8 @@ Features
 -------------
 ###Charts
 * Live bar chart and line chart
-* Several color available
-* Chart name and axis label editable
+* Chart name editable
+* Chart color and axis label changeable by click ![label](label.png "chart lahel")
 * API available
 
 ###Form
