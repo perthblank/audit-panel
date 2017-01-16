@@ -93,9 +93,10 @@ h2
 #errContainer
 {
   border-radius:5px;
-  border:2px solid #dfdfdf;
+  background-color:#eee;
   width:40%;
   padding:15px;
+  font-size:18px;
 }
 
 #errorLight
@@ -159,7 +160,7 @@ h2
   padding-bottom: 10px;
 }
 
-table
+table.ctable
 {
   color:#004884;
   margin-bottom:10px;
@@ -171,12 +172,12 @@ table
   margin-top:10px;
 }
 
-tr
+.ctable tr
 {
   border-bottom:1px solid #eee;
 }
 
-td
+.ctable td
 {
   margin-top:0px;
   padding-bottom:30px;

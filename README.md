@@ -3,7 +3,8 @@ AuditPanel: Juniper Networks Code Challenge
 
 
 This project gives solution to the code challenge from **Juniper Networks**. 
-Developed and tested on **Chrome**
+Toolset include: Javascript, CSS, HTML, jQuery, jQuery-mockjax, Bootstrap and D3.js.
+Developed and tested on **Chrome**.
 
 ----------
 Features
@@ -28,11 +29,11 @@ This project adopts the node server from the source, thus the usage is the same 
 * When the installation is finished, run `npm run start` and open `localhost:8000` in your browser
 
 
-API
+APIs
 -------------
-APIs are designed for potential future usage
-###Chart
-####Bar chart (mychart.js)
+APIs are designed and utilized, and can be easily used in the future
+###Chart (mychart.js)
+####Bar chart
 ```javascript
 var myChart = new BarChart(parentContainerID, chartName, criteria, upperBound);
 ```
@@ -68,7 +69,7 @@ var form = new dynamicForm(
 	unfinishCallback
 );
 ```
-where the `dataConfig` is like
+where the `dataConfig` is the object of all possible options, like
 ```javascript
 var dataConfig = {
 "properties":{
@@ -89,7 +90,7 @@ var dataConfig = {
     },
 }
 ```
-Those with `"required":true` criteria cannot be exclude when customizing.
+This wiil generate a checkbox form, where user change choose which crterion should be includeding in the form. Those with `"required":true` criteria cannot be exclude when customizing.
 
 ----------
 

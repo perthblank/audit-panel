@@ -67,7 +67,8 @@ class dynamicForm
                 $(".alert").hide();
                 d3.select("#"+mainFormID)
                     .append("h2").attr("class","formHeader").html('Dynamic Form');
-                var table = d3.select("#"+mainFormID).append("table");
+                var table = d3.select("#"+mainFormID)
+                    .append("table").attr("class","ctable");
                 d3.selectAll(".criteriaCheckbox").each(function(){
                     if(d3.select(this).node().checked)
                     {
