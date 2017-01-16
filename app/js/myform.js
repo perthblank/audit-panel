@@ -37,7 +37,8 @@ class dynamicForm
     {
         var criteria = config["properties"];
         Object.keys(criteria).forEach(function(key){
-            var clabel = d3.select("#"+selectionFormID).select("div").append("label").attr("class","checkbox-inline");
+            var clabel = d3.select("#"+selectionFormID)
+                .append("div").attr("class","checkbox").append("label").attr("class","checkbox-inline");
             var cbox = clabel.append("input")
                 .attr("type","checkbox")
                 .attr("class", "criteriaCheckbox")
@@ -62,30 +63,37 @@ class dynamicForm
             .on("click",function(){
                 
                 d3.select("#"+mainFormID).html("");
+                $(".alert").hide();
+                var table = d3.select("#"+mainFormID).append("table");
                 d3.selectAll(".criteriaCheckbox").each(function(){
                     if(d3.select(this).node().checked)
                     {
+                        var tr = table.append("tr");
                         var key = d3.select(this).attr("value");
                         if(criteria[key]["properties"])
                         {
-                            var outer = d3.select("#"+mainFormID).append("div").attr("class","cform");
-                            outer.append("label").html(key);
-                            var form = outer.append("form");
+                            var outer = tr.append("td").append("div").attr("class","tdLabel");
+                            outer.append("label").attr("class","clabel").html(key);
+                            var form = tr.append("td").append("form").attr("class","cform");
                             Object.keys(criteria[key]["properties"]).forEach(function(c){
                                 var group = form.append("div").attr("class","form-group");
-                                group.append("label").html(c);
+                                group.append("span").html(c);
                                 group.append("input")
                                     .attr("targ",key+","+c)
+                                    .attr("placeholder",criteria[key]["properties"][c]["type"])
                                     .attr("class","form-control cinput");
                             });
                         }
                         else
                         {
-                            var form = d3.select("#"+mainFormID).append("form").attr("class","cform");
-                            var group = form.append("div").attr("class","form-group");
-                            group.append("label").html(key);
+                            var outer = tr.append("td").append("div").attr("class","tdLabel");
+                            outer.append("label").attr("class","clabel").html(key);
+                            
+                            var form = tr.append("td").append("form").attr("class","cform");
+                            var group = form.append("div");
                             group.append("input")
                                 .attr("targ",key)
+                                .attr("placeholder",criteria[key]["type"])
                                 .attr("class","form-control cinput");
                         }
                     }
@@ -106,7 +114,7 @@ class dynamicForm
                             if(value=="") 
                             {
                                 flag = false;
-                                input.style("background-color","#D9849D");
+                                input.style("background-color","rgb(247, 212, 222)");
                                 return;
                             }
 
@@ -168,5 +176,5 @@ initComponent();
 
 var form = new dynamicForm(dataConfig,"selectionForm","mainForm", submitData, unfinish);
 
-d3.selectAll(".mainContainer").classed("hidden",true);
-d3.select("#formContainer").classed("hidden",false);
+//d3.selectAll(".mainContainer").classed("hidden",true);
+//d3.select("#formContainer").classed("hidden",false);

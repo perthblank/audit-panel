@@ -1,18 +1,36 @@
 *{
   font-family:Arial, Helvetica, sans-serif;
 }
+
+h1
+{
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  width:60%;
+}
+
+h2
+{
+  margin-top:10px;
+}
+
 .line {
   fill: none;
   stroke-width: 3.5px;
 }
 
-.bar:hover {
-  fill: brown;
-}
-
 .axis--x path {
   display: none;
 }
+
+.mainContainer
+{
+  padding-left:14%;
+  margin-top:30px;
+  display:relative;
+  padding-bottom:50px;
+}
+
 
 #barContainer, #lineContainer{
   width:700px;
@@ -28,6 +46,7 @@
   background:#dfdfdf;
   border-radius:10px;
 }
+
 
 .svg{
   float:left;
@@ -71,13 +90,6 @@
   color:white;
 }
 
-.mainContainer
-{
-  padding-left:50px;
-  margin-top:30px;
-  display:relative;
-  padding-bottom:50px;
-}
 
 #errorLight
 {
@@ -95,13 +107,57 @@
   width:300px;
 }
 
+.form-control:focus {
+  border: 1px #222087 solid;
+  border-radius: 0px;
+}
+
+
+.cinput
+{
+  border-radius:0px !important;
+  width:70% !important;
+}
+
+.clabel
+{
+  float:left;
+  font-size:20px;
+}
+
+#selectionForm
+{
+}
+
 .cform
 {
-  padding-bottom:2px;
+  padding-bottom:10px;
   padding-left:10px;
-  margin-bottom:10px;
-  border-left: 6px solid steelblue;
-  border-bottom: 2px solid steelblue;
+  width:300px;
+  margin-top:10px;
+}
+
+table
+{
+  color:#004884;
+}
+
+.tdLabel
+{
+  width:300px;
+  margin-top:10px;
+}
+
+tr
+{
+  border-bottom:1px solid #eee;
+}
+
+td
+{
+  margin-top:0px;
+  padding-bottom:30px;
+  vertical-align: top;
 }
 
 .alert
@@ -110,3 +166,5 @@
   width:300px;
   margin-top:10px;
 }
+
+

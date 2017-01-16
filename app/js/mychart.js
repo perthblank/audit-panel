@@ -412,5 +412,4 @@ function initCharts()
         });
 }
 
-
 initCharts();
