@@ -12,7 +12,7 @@ Features
 ###Charts
 * Live bar chart and line chart
 * Chart name editable by click
-* Chart color and axis label changeable by click label like ![label](label.png "chart lahel")
+* Chart color and axis label changeable by click label like ![label](img/label.png "chart lahel")
 * Component API available
 
 ###Form
