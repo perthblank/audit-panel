@@ -387,18 +387,19 @@ class Controler
 
 var controler = new Controler();
 
-function init()
+function initCharts()
 {
     controler.add(new CriteriaBar("CPU",["cpu_usage"],1));
     controler.add(new CriteriaBar("Memory",["memory_usage","memory_available"],40000));
     controler.add(new CriteriaBar("Network-Throughput",["network_throughput,in","network_throughput,out"],20000));
     controler.add(new CriteriaBar("Network-Packet",["network_packet,in","network_packet,out"],1000));
+    controler.add(new CriteriaBar("Errors",["errors,system","errors,sensor","errors,component"],10));
     
     controler.add(new CriteriaLine("CPU",["cpu_usage"],1));
     controler.add(new CriteriaLine("Memory",["memory_usage","memory_available"],40000));
     controler.add(new CriteriaLine("Network-Throughput",["network_throughput,in","network_throughput,out"],20000));
     controler.add(new CriteriaLine("Network-Packet",["network_packet,in","network_packet,out"],1000));
-    
+    controler.add(new CriteriaLine("Errors",["errors,system","errors,sensor","errors,component"],10));
     
     d3.selectAll("span")
         .attr("contenteditable","true");
@@ -413,4 +414,4 @@ function init()
 }
 
 
-
+initCharts();

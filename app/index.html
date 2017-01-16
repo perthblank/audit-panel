@@ -12,14 +12,27 @@
         -->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="js/mockAPIs.js"></script>
-        <script src="js/mychart.js"></script>
-        <script src="js/demo/demo_driver.js"></script>
 
     </head>
     <body>
-        <div class="mainContainer">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Juniper Networks</a>
+            </div>
+        
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active navBtn"><a href="#" targ="chartsContainer">Charts </a></li>
+                <li class="navBtn"><a href="#" targ="formContainer">Form</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="mainContainer" id="chartsContainer">
             <h1>Configurable Live Charts</h1>
             <div id"errContainer">
                 <h2 style="display:inline" >Error Light</h2>
@@ -34,35 +47,22 @@
             </div>
         </div>
 
-        <div class="mainContainer">
+        <div class="mainContainer hidden" id="formContainer">
             <h1>Data Entry Form</h1>
-            <div class="checkbox">
-                <label class="checkbox-inline">
-                      <input type="checkbox" class="criteriaCheckbox" value="option1"> CPU
-                </label>
-                <label class="checkbox-inline">
-                      <input type="checkbox" class="criteriaCheckbox" value="option2"> Memory 
-                </label>
-            </div>
-                    
-            <form id="dataForm" class="col-xs-5">
-
-                 <div class="row">
-                     <div class="form-group col-xs-5">
-                        <label for="exampleInputName2">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-                    </div>
-                    <div class="form-group col-xs-5">
-                        <label for="exampleInputEmail2">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-                    </div>
-                </div>
-
-                <button type="buttom" class="btn btn-default">Submit</button>
+            <h3> Select criteria to be formed </h3>
+            <form id="selectionForm" >
+                <div class="checkbox"></div>
             </form>
 
+            <button type="buttom" id="btnGenerate" class="btn btn-default">Generate Form</button>
 
+            <div id="mainForm">
+            </div>
+            <button type="buttom" id="btnSubmit" class="btn btn-default hidden">Submit</button>
+            <div class="alert alert-danger" role="alert" id="errorAlert">...</div>
+            <div class="alert alert-success" role="alert" id="successAlert">...</div>
         </div><!--2nd mainContainer-->
+
 
 
 <script>
@@ -72,7 +72,9 @@ function print(s)
 }
 
 </script>
-
-
     </body>
 </html>
+        <script src="js/mockAPIs.js"></script>
+        <script src="js/mychart.js"></script>
+        <script src="js/demo/demo_driver.js"></script>
+        <script src="js/myform.js"></script>

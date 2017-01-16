@@ -74,9 +74,9 @@
 .mainContainer
 {
   padding-left:50px;
-  padding-top:20px;
-  width:100%;
   margin-top:30px;
+  display:relative;
+  padding-bottom:50px;
 }
 
 #errorLight
@@ -87,4 +87,26 @@
   border:0px solid black;
   margin-top:5px;
   background-color:#4a0000;
+}
+
+#mainForm
+{
+  margin-top:30px;
+  width:300px;
+}
+
+.cform
+{
+  padding-bottom:2px;
+  padding-left:10px;
+  margin-bottom:10px;
+  border-left: 6px solid steelblue;
+  border-bottom: 2px solid steelblue;
+}
+
+.alert
+{
+  display:none;
+  width:300px;
+  margin-top:10px;
 }
