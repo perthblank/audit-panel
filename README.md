@@ -11,13 +11,13 @@ Features
 -------------
 ###Charts
 * Live bar chart and line chart
-* Chart name editable
-* Chart color and axis label changeable by click ![label](label.png "chart lahel")
-* API available
+* Chart name editable by click
+* Chart color and axis label changeable by click label like ![label](label.png "chart lahel")
+* Component API available
 
 ###Form
-* Configurable form generator
-* API available
+* Customizable by user
+* Component API available
 
 Usage
 -------------
