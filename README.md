@@ -91,6 +91,7 @@ var dataConfig = {
 }
 ```
 This wiil generate a checkbox form, where user change choose which crterion should be includeding in the form. Those with `"required":true` criteria cannot be exclude when customizing.
+When submit button clicked, this component will call `submitDataCallback(data)` where `data` is the form result object of criterion-value pairs. If the submit button is clicked when form not finish, `unfinishCallback()` will be called.
 
 ----------
 
