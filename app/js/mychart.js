@@ -66,7 +66,7 @@ var keyNameMap = new KeyNameMap();
 
 class CriteriaLine{
 
-    constructor(name, criteria, upperBound)
+    constructor(parentContainerID, name, criteria, upperBound)
     {
         var n = criteria.length;
         if(n==0)
@@ -78,7 +78,7 @@ class CriteriaLine{
         var svgHeight = 250;
         var containerHeight = svgHeight+80;
 
-        var div = d3.select("#lineContainer")
+        var div = d3.select("#"+parentContainerID)
           .append("div")
             .attr("class", "panelContainer")
             .attr("id",divID)
@@ -208,7 +208,7 @@ class CriteriaLine{
 
 class CriteriaBar{
 
-    constructor(name, criteria, upperBound)
+    constructor(parentContainerID, name, criteria, upperBound)
     {
         var n = criteria.length;
         if(n==0)
@@ -224,7 +224,7 @@ class CriteriaBar{
         var svgHeight = 40*n+20;
         var containerHeight = svgHeight+80;
 
-        var div = d3.select("#barContainer")
+        var div = d3.select("#"+parentContainerID)
           .append("div")
             .attr("class", "panelContainer")
             .attr("id",divID)
@@ -389,18 +389,17 @@ var controler = new Controler();
 
 function initCharts()
 {
-    controler.add(new CriteriaBar("CPU",["cpu_usage"],1));
-    controler.add(new CriteriaBar("Memory",["memory_usage","memory_available"],40000));
-    controler.add(new CriteriaBar("Network-Throughput",["network_throughput,in","network_throughput,out"],20000));
-    controler.add(new CriteriaBar("Network-Packet",["network_packet,in","network_packet,out"],1000));
-    controler.add(new CriteriaBar("Errors",["errors,system","errors,sensor","errors,component"],10));
-    
-    controler.add(new CriteriaLine("CPU",["cpu_usage"],1));
-    controler.add(new CriteriaLine("Memory",["memory_usage","memory_available"],40000));
-    controler.add(new CriteriaLine("Network-Throughput",["network_throughput,in","network_throughput,out"],20000));
-    controler.add(new CriteriaLine("Network-Packet",["network_packet,in","network_packet,out"],1000));
-    controler.add(new CriteriaLine("Errors",["errors,system","errors,sensor","errors,component"],10));
-    
+    var criteria = dataConfig["properties"];
+    Object.keys(criteria).forEach(function(key){
+        if(criteria[key]["type"]=="string")
+            return;
+        var clist = criteria[key]["properties"]?Object.keys(criteria[key]["properties"]).map(function(c){
+            return key+","+c; 
+        }):[key];
+        controler.add(new CriteriaBar("barContainer", key,clist,criteria[key]["default_upperbound"]));
+        controler.add(new CriteriaLine("lineContainer", key,clist,criteria[key]["default_upperbound"]));
+    });
+
     d3.selectAll("span")
         .attr("contenteditable","true");
     d3.selectAll(".criterionLabel")
