@@ -12,13 +12,13 @@ Developed and tested on **Chrome**.
 
 Features
 -------------
-###Charts
+### Charts
 * Live bar chart and line chart
 * Chart name editable by click
 * Chart color and axis label changeable by click label like ![label](img/label.png "chart lahel")
 * Component API available
 
-###Form
+### Form
 * Customizable by user
 * Component API available
 
@@ -35,12 +35,12 @@ This project adopts the node server from the source, thus the usage is the same 
 APIs
 -------------
 APIs are designed and utilized, and can be easily used in the future
-###Chart (mychart.js)
-####Bar chart
+### Chart (mychart.js)
+#### Bar chart
 ```javascript
 var myChart = new BarChart(parentContainerID, chartName, criteria, upperBound);
 ```
-####Line chart
+#### Line chart
 ```javascript
 var myChart = new LineChart(parentContainerID, chartName, criteria, upperBound);
 ```
@@ -61,7 +61,7 @@ to update chart, simply use
 myChart.update(data);
 ```
 
-###Form (myform.js)
+### Form (myform.js)
 To generate a form whose input boxes can be customized.
 ```javascript
 var form = new dynamicForm(
